@@ -1,96 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="assets/styles.css">
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
 
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-</head>
+  <body>
+    <!-- Sign-up form start -->
+    <main>
+      <div class="card" id="signupForm" data-visible="true">
+        <div class="card-content">
+          <h1>Stay updated!</h1>
 
-<body>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-  <!-- Sign-up form start -->
-  <main>
-    <div class="card" id="signupForm" data-visible="true">
-      <div class="card-content">
-        <h1>Stay updated!</h1>
+          <ul>
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+
+          <form name="newsletter" onsubmit="handleSubmit()">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              required
+              id="email"
+              name="email"
+              placeholder="email@company.com"
+            />
+
+            <button type="submit">Subscribe to monthly newsletter</button>
+          </form>
+        </div>
+        <div class="card-image">
+          <img
+            class="desktop-img"
+            src="assets/images/illustration-sign-up-desktop.svg"
+            aria-hidden="true"
+          />
+          <img
+            class="mobile-img"
+            src="assets/images/illustration-sign-up-mobile.svg"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+
+      <!-- Sign-up form end -->
+
+      <!-- Success message start -->
+
+      <div class="card success" id="successForm" data-visible="false">
+        <img
+          class="success-img"
+          src="assets/images/icon-success.svg"
+          aria-hidden="true"
+        />
+        <h1>Thanks for subscribing!</h1>
 
         <p>
-          Join 60,000+ product managers receiving monthly updates on:
-
-        <ul>
-          <li>Product discovery and building what matters</li>
-          <li>Measuring to ensure updates are a success</li>
-          <li>And much more!</li>
-        </ul>
-
+          A confirmation email has been sent to
+          <span class="bold">ash@loremcompany.com</span>. Please open it and
+          click the button inside to confirm your subscription.
         </p>
 
-        <form name="newsletter" onsubmit="handleSubmit()">
-          <label for="email">Email address</label>
-          <input type="email" required id="email" name="email" placeholder="email@company.com" />
-
-          <button type="submit" onClick=>Subscribe to monthly newsletter</button>
-        </form>
+        <button type="button" onclick="handleDismiss()">Dismiss message</button>
       </div>
-      <div class="card-image">
-        <img class="desktop-img" src="assets/images/illustration-sign-up-desktop.svg" aria-hidden="true" />
-        <img class="mobile-img" src="assets/images/illustration-sign-up-mobile.svg" aria-hidden="true" />
-      </div>
+    </main>
 
-    </div>
+    <!-- Success message end -->
 
-    <!-- Sign-up form end -->
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://samlalezari.com">Sam Lalezari</a>.
+    </footer>
+  </body>
 
-    <!-- Success message start -->
+  <script>
+    function handleSubmit() {
+      event.preventDefault();
+      document.querySelector("#email").value = "";
+      document.querySelector("#signupForm").dataset.visible = false;
+      document.querySelector("#successForm").dataset.visible = true;
+    }
 
-    <div class="card success" id="successForm" data-visible="false">
-      <img class="success-img" src="assets/images/icon-success.svg" aria-hidden="true" />
-      <h1>
-        Thanks for subscribing!
-      </h1>
-
-      <p>
-        A confirmation email has been sent to <span class="bold">ash@loremcompany.com</span>.
-        Please open it and click the button inside to confirm your subscription.
-      </p>
-
-      <button type="button" onclick="handleDismiss()">
-        Dismiss message
-      </button>
-
-    </div>
-  </main>
-
-  <!-- Success message end -->
-
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://samlalezari.com">Sam Lalezari</a>.
-  </footer>
-</body>
-
-<script>
-  function handleSubmit() {
-    event.preventDefault();
-    document.querySelector("#email").value = "";
-    document.querySelector("#signupForm").dataset.visible = false;
-    document.querySelector("#successForm").dataset.visible = true;
-  }
-
-  function handleDismiss() {
-    event.preventDefault();
-    document.querySelector("#signupForm").dataset.visible = true;
-    document.querySelector("#successForm").dataset.visible = false;
-  }
-</script>
-
+    function handleDismiss() {
+      event.preventDefault();
+      document.querySelector("#signupForm").dataset.visible = true;
+      document.querySelector("#successForm").dataset.visible = false;
+    }
+  </script>
 </html>
