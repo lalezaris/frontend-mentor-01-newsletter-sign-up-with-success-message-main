@@ -182,6 +182,8 @@ input {
 label {
   font-size: 0.75rem;
   font-family: RobotoBold, sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 
 input::placeholder {
@@ -205,7 +207,8 @@ button {
   font-family: RobotoBold, sans-serif;
 }
 
-button:hover {
+button:hover,
+button:active {
   cursor: pointer;
   background: linear-gradient(
     90deg,
@@ -215,6 +218,11 @@ button:hover {
   box-shadow: 0px 10px 20px -5px rgba(255, 105, 60, 0.75);
 }
 
+button:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 4px rgba(255, 105, 60, 0.75);
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -222,4 +230,17 @@ button:hover {
 
 span#email-span {
   font-family: RobotoBold, sans-serif;
+}
+
+input[data-valid="false"] {
+  background-color: hsl(5, 100%, 95%);
+  outline: none;
+  border-color: hsl(5, 85%, 60%);
+}
+
+#emailLabel[data-valid="false"]::after {
+  content: "Valid email required";
+  float: right;
+  color: hsl(5, 85%, 60%);
+  position: relative;
 }

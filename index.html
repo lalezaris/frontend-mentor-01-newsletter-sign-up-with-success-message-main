@@ -35,11 +35,10 @@
             <li>And much more!</li>
           </ul>
 
-          <form name="newsletter" onsubmit="handleSubmit()">
-            <label for="email">Email address</label>
+          <form name="newsletter" novalidate onsubmit="handleSubmit()">
+            <label for="email" id="emailLabel">Email address</label>
             <input
               type="email"
-              required
               id="email"
               name="email"
               placeholder="email@company.com"
@@ -95,13 +94,27 @@
   </body>
 
   <script>
+    const emailInput = document.querySelector("#email");
+    const emailLabel = document.querySelector("#emailLabel");
+    emailInput.addEventListener("change", () => {
+      if (emailInput.validity.valid) {
+        emailInput.dataset.valid = true;
+        emailLabel.dataset.valid = true;
+      }
+    });
+
     function handleSubmit() {
       event.preventDefault();
-      const emailInput = document.querySelector("#email");
-      document.querySelector("#email-span").textContent = email.value;
-      email.value = "";
-      document.querySelector("#signupForm").dataset.visible = false;
-      document.querySelector("#successForm").dataset.visible = true;
+      if (emailInput.validity.valid && email.value) {
+        document.querySelector("#email-span").textContent = email.value;
+        emailInput.value = "";
+        document.querySelector("#signupForm").dataset.visible = false;
+        document.querySelector("#successForm").dataset.visible = true;
+      } else {
+        console.log("valid is false");
+        emailInput.dataset.valid = false;
+        emailLabel.dataset.valid = false;
+      }
     }
 
     function handleDismiss() {
