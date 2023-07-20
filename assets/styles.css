@@ -1,122 +1,168 @@
 @font-face {
     font-family: Roboto;
     src: local("Roboto"), url("fonts/Roboto-Regular.ttf"), url("fonts/Roboto-Bold.ttf");
-  }
+}
 
-  @font-face {
+@font-face {
     font-family: RobotoBold;
     src: local("Roboto-Bold"), url("fonts/Roboto-Bold.ttf");
-  }
+}
 
-  html {
+@media screen and (max-width: 779px) {
+    .card {
+        width: 100%;
+        flex-direction: column-reverse;
+        padding: 0 0 1.5rem 0;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .mobile-img {
+        width: 100%;
+    }
+
+    .card-image {
+        margin-left: 0;
+
+    }
+
+    .attribution {
+        background-color: white;
+        padding-bottom: 0.5rem;
+    }
+
+    .attribution a {
+        color: hsl(235, 18%, 26%);
+    }
+}
+
+@media screen and (min-width: 779px) {
+    main {
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .card {
+        border-radius: 30px;
+        padding: 1.5rem;
+        max-width: 930px;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .card-image {
+        margin-left: 2rem;
+        max-width: 400px;
+        max-height: 593px;
+    }
+
+    .desktop-img {
+        max-width: 100%;
+    }
+
+    .mobile-img {
+        display: none;
+    }
+
+    .attribution {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+    }
+
+    .attribution a {
+        color: hsl(228, 100%, 91.2%);
+    }
+}
+
+html {
     height: 100%;
-  }
+}
 
-  body {
+body {
     background-color: hsl(235, 18%, 26%);
     font-family: Roboto, sans-serif;
     height: 100%;
     margin: 0;
-  }
+}
 
-  main {
+main {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-  }
+}
 
-  .card {
+.card {
     background-color: white;
     color: hsl(234, 29%, 20%);
-    border-radius: 30px;
-    padding: 1.5rem;
-    display:flex;
-    max-width: 930px;
-    box-sizing: border-box;
-  }
+    display: flex;
+}
 
-  .card-content {
+.card-content {
     margin: auto 2rem;
-  }
+}
 
-  .card-image {
-    margin-left: 2rem;
-    max-width: 400px;
-    max-height: 593px;
-  }
-
-  h1 {
+h1 {
     font-family: RobotoBold, sans-serif;
     font-weight: 800;
     font-size: 3.25rem;
     margin: 1.5rem 0;
-  }
+}
 
-  ul {
-    padding:0;
-  }
+ul {
+    padding: 0;
+}
 
-  li {
+li {
     display: flex;
     line-height: 25px;
-  }
+}
 
-  li::content {
+li::content {
     margin-top: auto;
-  }
+}
 
-  li::before {
+li::before {
     content: url("images/icon-list.svg");
     margin-right: 0.75rem;
-  }
-  
-  li:not(:first-of-type) {
+}
+
+li:not(:first-of-type) {
     margin-top: 0.5rem;
-  }
+}
 
-  [data-visible=true] {
+[data-visible=true] {
     visibility: visible;
-  }
+}
 
-  [data-visible=false] {
+[data-visible=false] {
     visibility: hidden;
     display: none;
-  }
+}
 
-  .attribution {
-    font-size: 11px;
-    text-align: center;
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-  }
-
-  .attribution a {
-    color: hsl(228, 100%, 91.2%);
-  }
-
-  input {
+input {
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
     border-radius: 7px;
     border: 1px solid hsl(231, 7%, 60%);
     margin-top: 0.5rem;
-  }
+}
 
-  label {
+label {
     font-size: 0.75rem;
     font-family: RobotoBold, sans-serif;
-  }
+}
 
-  input::placeholder {
+input::placeholder {
     color: hsl(231, 7%, 60%);
-  }
+}
 
-  button {
+button {
     width: 100%;
     background-color: hsl(234, 29%, 20%);
     color: white;
@@ -125,8 +171,13 @@
     border: none;
     margin-top: 1.5rem;
     font-family: RobotoBold, sans-serif;
-  }
+}
 
-  button:hover {
+button:hover {
     cursor: pointer;
-  }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
