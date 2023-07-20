@@ -18,7 +18,7 @@
 
   <!-- Sign-up form start -->
   <main>
-    <div class="card" data-visible="true">
+    <div class="card" data-visible="false">
       <div class="card-content">
         <h1>Stay updated!</h1>
 
@@ -41,8 +41,8 @@
         </form>
       </div>
       <div class="card-image">
-        <img class="desktop-img" src="assets/images/illustration-sign-up-desktop.svg" />
-        <img class="mobile-img" src="assets/images/illustration-sign-up-mobile.svg" />
+        <img class="desktop-img" src="assets/images/illustration-sign-up-desktop.svg" aria-hidden="true" />
+        <img class="mobile-img" src="assets/images/illustration-sign-up-mobile.svg" aria-hidden="true" />
       </div>
 
     </div>
@@ -51,7 +51,8 @@
 
     <!-- Success message start -->
 
-    <div class="card success" data-visible="false">
+    <div class="card success" data-visible="true">
+      <img class="success-img" src="assets/images/icon-success.svg" aria-hidden="true"/>
       <h1>
         Thanks for subscribing!
       </h1>

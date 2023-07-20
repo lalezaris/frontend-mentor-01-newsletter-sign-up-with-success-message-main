@@ -15,6 +15,22 @@
         padding: 0 0 1.5rem 0;
     }
 
+    .card.success {
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        padding: 5rem 1.5rem 1.5rem 1.5rem;
+        justify-content: center;
+    }
+
+    .card.success > .success-img {
+        align-self: flex-start;
+        }
+
+    .card.success > button {
+        margin-top: auto;
+    }
+
     .desktop-img {
         display: none;
     }
@@ -31,6 +47,7 @@
     .attribution {
         background-color: white;
         padding-bottom: 0.5rem;
+        height: 2rem;
     }
 
     .attribution a {
@@ -51,6 +68,12 @@
         max-width: 930px;
         align-items: center;
         box-sizing: border-box;
+    }
+
+    .card.success {
+        flex-wrap: wrap;
+        max-width: 500px;
+        padding: 4rem;
     }
 
     .card-image {
@@ -93,13 +116,14 @@ body {
 
 main {
     display: flex;
-    height: 100%;
+    height: calc(100vh - 2rem);
 }
 
 .card {
     background-color: white;
     color: hsl(234, 29%, 20%);
     display: flex;
+    align-content: flex-start;
 }
 
 .card-content {
@@ -162,6 +186,12 @@ input::placeholder {
     color: hsl(231, 7%, 60%);
 }
 
+input:focus,
+input:active,
+input:focus-visible {
+    outline: 1px solid hsl(235, 18%, 26%);
+}
+
 button {
     width: 100%;
     background-color: hsl(234, 29%, 20%);
@@ -175,6 +205,8 @@ button {
 
 button:hover {
     cursor: pointer;
+    background: linear-gradient(90deg, rgba(255, 84, 120, 1) 0%, rgba(255, 105, 60, 1) 100%);
+    box-shadow: 0px 10px 20px -5px rgba(255, 105, 60, 0.75)
 }
 
 .attribution {
