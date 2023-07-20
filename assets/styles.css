@@ -29,7 +29,7 @@
   .card {
     background-color: white;
     color: hsl(234, 29%, 20%);
-    border-radius: 25px;
+    border-radius: 30px;
     padding: 1.5rem;
     display:flex;
     max-width: 930px;
@@ -109,7 +109,7 @@
 
   label {
     font-size: 0.75rem;
-    font-weight: 700;
+    font-family: RobotoBold, sans-serif;
   }
 
   input::placeholder {
@@ -124,4 +124,9 @@
     border-radius: 7px;
     border: none;
     margin-top: 1.5rem;
+    font-family: RobotoBold, sans-serif;
+  }
+
+  button:hover {
+    cursor: pointer;
   }
