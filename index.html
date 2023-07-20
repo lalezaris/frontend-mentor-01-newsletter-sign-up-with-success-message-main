@@ -18,7 +18,7 @@
 
   <!-- Sign-up form start -->
   <main>
-    <div class="card" data-visible="false">
+    <div class="card" id="signupForm" data-visible="true">
       <div class="card-content">
         <h1>Stay updated!</h1>
 
@@ -33,10 +33,10 @@
 
         </p>
 
-        <form>
+        <form name="newsletter" onsubmit="handleSubmit()">
           <label for="email">Email address</label>
           <input type="email" required id="email" name="email" placeholder="email@company.com" />
-  
+
           <button type="submit" onClick=>Subscribe to monthly newsletter</button>
         </form>
       </div>
@@ -51,8 +51,8 @@
 
     <!-- Success message start -->
 
-    <div class="card success" data-visible="true">
-      <img class="success-img" src="assets/images/icon-success.svg" aria-hidden="true"/>
+    <div class="card success" id="successForm" data-visible="false">
+      <img class="success-img" src="assets/images/icon-success.svg" aria-hidden="true" />
       <h1>
         Thanks for subscribing!
       </h1>
@@ -62,7 +62,7 @@
         Please open it and click the button inside to confirm your subscription.
       </p>
 
-      <button type="submit">
+      <button type="button" onclick="handleDismiss()">
         Dismiss message
       </button>
 
@@ -77,5 +77,20 @@
     Coded by <a href="https://samlalezari.com">Sam Lalezari</a>.
   </footer>
 </body>
+
+<script>
+  function handleSubmit() {
+    event.preventDefault();
+    document.querySelector("#email").value = "";
+    document.querySelector("#signupForm").dataset.visible = false;
+    document.querySelector("#successForm").dataset.visible = true;
+  }
+
+  function handleDismiss() {
+    event.preventDefault();
+    document.querySelector("#signupForm").dataset.visible = true;
+    document.querySelector("#successForm").dataset.visible = false;
+  }
+</script>
 
 </html>
