@@ -9,6 +9,7 @@
   src: local("Roboto-Bold"), url("fonts/Roboto-Bold.ttf");
 }
 
+/* Small screen styles */
 @media screen and (max-width: 779px) {
   .card {
     width: 100%;
@@ -46,7 +47,6 @@
 
   .attribution {
     background-color: white;
-    padding-bottom: 0.5rem;
     height: 2rem;
   }
 
@@ -55,6 +55,7 @@
   }
 }
 
+/* Large screen styles */
 @media screen and (min-width: 779px) {
   main {
     justify-content: center;
@@ -103,6 +104,7 @@
   }
 }
 
+/* Global styles */
 html {
   height: 100%;
 }
@@ -216,4 +218,8 @@ button:hover {
 .attribution {
   font-size: 11px;
   text-align: center;
+}
+
+span#email-span {
+  font-family: RobotoBold, sans-serif;
 }

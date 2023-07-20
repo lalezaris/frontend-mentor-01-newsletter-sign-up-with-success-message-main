@@ -76,8 +76,8 @@
 
         <p>
           A confirmation email has been sent to
-          <span class="bold">ash@loremcompany.com</span>. Please open it and
-          click the button inside to confirm your subscription.
+          <span id="email-span"></span>. Please open it and click the button
+          inside to confirm your subscription.
         </p>
 
         <button type="button" onclick="handleDismiss()">Dismiss message</button>
@@ -97,7 +97,9 @@
   <script>
     function handleSubmit() {
       event.preventDefault();
-      document.querySelector("#email").value = "";
+      const emailInput = document.querySelector("#email");
+      document.querySelector("#email-span").textContent = email.value;
+      email.value = "";
       document.querySelector("#signupForm").dataset.visible = false;
       document.querySelector("#successForm").dataset.visible = true;
     }
