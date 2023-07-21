@@ -244,3 +244,18 @@ input[data-valid="false"] {
   color: hsl(5, 85%, 60%);
   position: relative;
 }
+
+.back a {
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
